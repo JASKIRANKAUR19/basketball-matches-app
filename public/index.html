@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Upcoming NBA Matches</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>🏀 Upcoming NBA Matches</h1>
+  </header>
+  
+  <div class="matches" id="matches">Loading...</div>
+
+  <footer>
+    Made with ❤️ for basketball fans
+  </footer>
+
+  <script>
+    fetch('/api/matches')
+      .then(response => response.json())
+      .then(data => {
+        const matchesDiv = document.getElementById('matches');
+        matchesDiv.innerHTML = '';
+
+        data.data.forEach(match => {
+          const div = document.createElement('div');
+          div.className = 'match-card';
+          div.innerHTML = `
+            <strong>${match.home_team.full_name}</strong> vs 
+            <strong>${match.visitor_team.full_name}</strong><br>
+            Date: ${new Date(match.date).toLocaleString()}<br>
+            Season: ${match.season}
+          `;
+          matchesDiv.appendChild(div);
+        });
+      })
+      .catch(err => {
+        document.getElementById('matches').textContent = 'Failed to load matches.';
+        console.error(err);
+      });
+  </script>
+</body>
+</html>

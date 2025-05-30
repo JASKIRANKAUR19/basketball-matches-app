@@ -1,0 +1,11 @@
+# Node modules folder (should not be pushed to GitHub)
+node_modules
+
+# Environment variables (if any)
+.env
+
+# System-specific files (optional)
+.DS_Store
+
+# Log files (optional)
+*.log

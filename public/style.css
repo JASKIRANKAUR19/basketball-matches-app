@@ -1,0 +1,37 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to bottom, #1e3c72, #2a5298);
+  color: white;
+  text-align: center;
+  margin: 0;
+}
+
+header {
+  background: #001f3f;
+  padding: 1em;
+}
+
+h1 {
+  color: #f9d342;
+  font-size: 2em;
+}
+
+.matches {
+  padding: 2em;
+}
+
+.match-card {
+  background: rgba(255, 255, 255, 0.1);
+  margin: 1em auto;
+  padding: 1em;
+  border-radius: 8px;
+  max-width: 500px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+footer {
+  background: #001f3f;
+  padding: 1em;
+  margin-top: 2em;
+}
+
